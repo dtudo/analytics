@@ -16,7 +16,7 @@ export const DEFINEDS = {
 };
 
 export const DATE_RANGE_DEFAULT_VALUE: DateRange = {
-    startDate: DEFINEDS.startOfLastWeek,
+    startDate: DEFINEDS.startOfLast4Weeks,
     endDate: DEFINEDS.endOfLastWeek
 };
 

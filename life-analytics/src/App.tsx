@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import DatePicker from './DatePicker';
 import { DateRange } from './types/DateRange';
-import { DATE_RANGE_DEFAULT_VALUE } from './constants/app-constants';
+import { DATE_RANGE_DEFAULT_VALUE } from './constants/date-constants';
+import HabitCharts from './HabitCharts';
+import PhotoGallery from './PhotoGallery';
 
 const App: React.FC = () => {
+
   const [globalDateRange, setGlobalDateRange] = useState<DateRange>(DATE_RANGE_DEFAULT_VALUE);
   const [habitTrackerDateRange, setHabitTrackerDateRange] = useState<DateRange>(DATE_RANGE_DEFAULT_VALUE);
   const [photoGalleryDateRange, setPhotoGalleryTrackerDateRange] = useState<DateRange>(DATE_RANGE_DEFAULT_VALUE);
@@ -16,32 +19,13 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <div style={{ marginBottom: '20px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h3>Global Date Range</h3>
-          <DatePicker dateRange={globalDateRange} updateDateRange={updateGlobalDateRange} />
-        </div>
-        <p>Start Date: {globalDateRange.startDate.toDateString()}</p>
-        <p>End Date: {globalDateRange.endDate.toDateString()}</p>
+      <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+        <h4 style={{ marginRight: '5px' }}>Apply to all datepickers</h4>
+        <DatePicker dateRange={globalDateRange} updateDateRange={updateGlobalDateRange} />
       </div>
 
-      <div style={{ marginBottom: '20px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h3>Habit Tracker Date Range</h3>
-          <DatePicker dateRange={habitTrackerDateRange} updateDateRange={setHabitTrackerDateRange} />
-        </div>
-        <p>Start Date: {habitTrackerDateRange.startDate.toDateString()}</p>
-        <p>End Date: {habitTrackerDateRange.endDate.toDateString()}</p>
-      </div>
-
-      <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h3>Photo Gallery Date Range</h3>
-          <DatePicker dateRange={photoGalleryDateRange} updateDateRange={setPhotoGalleryTrackerDateRange} />
-        </div>
-        <p>Start Date: {photoGalleryDateRange.startDate.toDateString()}</p>
-        <p>End Date: {photoGalleryDateRange.endDate.toDateString()}</p>
-      </div>
+      <HabitCharts dateRange={habitTrackerDateRange} updateDateRange={setHabitTrackerDateRange} />
+      <PhotoGallery dateRange={photoGalleryDateRange} updateDateRange={setPhotoGalleryTrackerDateRange} />
     </div>
   );
 };

@@ -1,3 +1,9 @@
+# Setup
+1. Get the habit tracker data by using the script from "Exporting habit tracker data Google Sheet > Apps Script".
+2. `npm start` on the React App. (life-analytics)
+3. `npm run dev` on the Server App. (life-analytics-server)
+4. Make sure the file generated at 1 is on the right path for the Server App.
+
 # Exporting habit tracker data Google Sheet > Apps Script
 ```js
 function exportHabitTrackerData() {
@@ -42,16 +48,4 @@ function exportHabitTrackerData() {
   Logger.log(`JSON saved to Google Drive. File ID: ${file.getId()}`);
   return file.getId(); // Optionally return the file ID
 }
-```
-
-# UI app
-### Get material UI
-```
-npm install @mui/material @emotion/react @emotion/styled
-```
-
-# Useful code
-### Parent - Child, Child - Child state relationships
-```
-https://chatgpt.com/share/673f909a-89c8-8005-ab01-899ce80f8736
 ```

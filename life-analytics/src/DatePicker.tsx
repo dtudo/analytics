@@ -4,7 +4,7 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRangePicker, RangeKeyDict } from 'react-date-range';
 import { enGB } from 'date-fns/locale';
-import { DEFAULT_STATIC_RANGES, DEFINEDS } from './constants/app-constants';
+import { DEFAULT_STATIC_RANGES, DEFINEDS } from './constants/date-constants';
 import { FaCalendarAlt } from 'react-icons/fa';
 
 interface DatePickerProps {
